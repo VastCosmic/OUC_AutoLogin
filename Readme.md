@@ -27,7 +27,9 @@ git clone https://github.com/VastCosmic/OUC_AutoLogin.git
 python OUC_AutoLogin.py
 ```
 
-7. You can use the Windows Task Scheduler to run the script automatically at a specific time.
+7. If you use Windows, you can just click on the `run.bat` file to run the script instead of running the command in step 6.
+
+8. You can use the Windows Task Scheduler for `run.bat` to run the script automatically at a specific time.
 
 
 # OUC_AutoLogin (中文) (由GitHub Copilot自动生成)
@@ -59,4 +61,6 @@ git clone https://github.com/VastCosmic/OUC_AutoLogin.git
 python OUC_AutoLogin.py
 ```
 
-7. 你可以使用Windows任务计划程序在特定时间自动运行脚本。
+7. 如果你使用Windows，你可以直接点击`run.bat`文件来运行脚本，而不是运行第6步中的命令。
+
+8. 你可以使用Windows任务计划程序为`run.bat`在特定时间自动运行脚本。
