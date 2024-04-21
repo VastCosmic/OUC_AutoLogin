@@ -17,8 +17,9 @@ import subprocess
 import time
 
 def is_connected():
-    process = subprocess.Popen("ping -n 1 www.baidu.com > nul 2>&1", shell=True)
+    process = subprocess.Popen("ping -n 1 baidu.com > nul 2>&1", shell=True)
     time.sleep(1)
+
     if process.poll() is None:
         print("Ping command did not complete within 1 second")
         process.terminate()
@@ -35,6 +36,6 @@ else:
 
     from selenium import webdriver
 
-    url="https://xha.ouc.edu.cn:802/eportal/portal/login?callback=dr1003&login_method=1&user_account="+user_account+"+&user_password="+user_password
+    url="https://xha.ouc.edu.cn:802/eportal/portal/login?callback=dr1003&login_method=1&user_account="+user_account+"&user_password="+user_password
     driver = webdriver.Chrome()
     driver.get(url)
