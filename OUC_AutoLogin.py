@@ -17,15 +17,22 @@ import subprocess
 import time
 
 def is_connected():
-    process = subprocess.Popen("ping -n 1 baidu.com > nul 2>&1", shell=True)
-    time.sleep(1)
+    host = 'www.baidu.com'
 
-    if process.poll() is None:
-        print("Ping command did not complete within 1 second")
-        process.terminate()
+    try:
+        output = subprocess.check_output(['ping', '-n', '1', host], timeout=1)
+        if 'TTL=' in output.decode('gbk'):
+            print("Connected to the Internet")
+            return True
+        else:
+            print("Not connected to the Internet")
+            return False
+    except subprocess.CalledProcessError as ex:
+        print("Not connected to the Internet: "+str(ex))
         return False
-    else:
-        return True
+    except subprocess.TimeoutExpired as ex:
+        print("Not connected to the Internet: "+str(ex))
+        return False
 
 
 if is_connected():
